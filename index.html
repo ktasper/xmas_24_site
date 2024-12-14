@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas Gift Unlock</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f2f7ff;
+            background-image: url('https://t4.ftcdn.net/jpg/09/03/26/09/360_F_903260950_ykK3h95mLbAq3o5BIigxRfL4UdYRntv8.jpg'); /* Add a festive background */
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #b22222; /* Christmas Red */
+            font-size: 2.5em;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            max-width: 500px;
+            margin: auto;
+        }
+
+        .input-section {
+            margin: 15px 0;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 1.2em;
+        }
+
+        input {
+            width: 80%;
+            padding: 10px;
+            font-size: 1em;
+            margin-bottom: 10px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        button {
+            background-color: #4CAF50; /* Green */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #message {
+            margin-top: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎄 Unlock Your Christmas Gift 🎁</h1>
+
+    <div class="container">
+        <!-- 5-digit Code -->
+        <div class="input-section">
+            <label for="code">Enter the 5-digit Code:</label>
+            <input type="text" id="code" maxlength="5" placeholder="12345">
+        </div>
+
+        <!-- Riddle 1 -->
+        <div class="input-section">
+            <label for="riddle1">Riddle 1: I’m tall when I’m young, and I’m short when I’m old. What am I?</label>
+            <input type="text" id="riddle1" placeholder="Your Answer">
+        </div>
+
+        <!-- Riddle 2 -->
+        <div class="input-section">
+            <label for="riddle2">Riddle 2: What has hands but can’t clap?</label>
+            <input type="text" id="riddle2" placeholder="Your Answer">
+        </div>
+
+        <!-- Riddle 3 -->
+        <div class="input-section">
+            <label for="riddle3">Riddle 3: What has many keys but can’t open a single lock?</label>
+            <input type="text" id="riddle3" placeholder="Your Answer">
+        </div>
+
+        <!-- Submit Button -->
+        <button onclick="checkInputs()">Unlock Gift</button>
+
+        <!-- Message Section -->
+        <div id="message"></div>
+    </div>
+
+    <script>
+        const correctCode = "56789"; // Set your 5-digit code
+        const answers = ["candle", "clock", "piano"]; // Correct answers for the riddles (lowercase)
+
+        function checkInputs() {
+            const codeInput = document.getElementById('code').value.trim();
+            const riddle1 = document.getElementById('riddle1').value.trim().toLowerCase();
+            const riddle2 = document.getElementById('riddle2').value.trim().toLowerCase();
+            const riddle3 = document.getElementById('riddle3').value.trim().toLowerCase();
+            const messageDiv = document.getElementById('message');
+
+            if (codeInput === correctCode &&
+                riddle1 === answers[0] &&
+                riddle2 === answers[1] &&
+                riddle3 === answers[2]) {
+                messageDiv.style.color = "green";
+                messageDiv.innerHTML = "🎉 Congratulations! Here's your gift: <a href='https://example.com'>Click here to open!</a>";
+            } else {
+                messageDiv.style.color = "red";
+                messageDiv.textContent = "Oops! Some answers are incorrect. Try again!";
+            }
+        }
+    </script>
+</body>
+</html>
+
